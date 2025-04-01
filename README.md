@@ -1,66 +1,122 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# NovelasApp - Plataforma de Gestión de Novelas
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="public/images/default-cover.svg" width="200" alt="NovelasApp Logo">
 </p>
 
-## About Laravel
+## Acerca de NovelasApp
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+NovelasApp es una plataforma web completa para la creación, publicación y lectura de novelas en línea, desarrollada con Laravel 10 y MySQL. El sistema permite a los escritores compartir sus obras por capítulos y a los lectores descubrir historias según sus géneros preferidos.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Características Principales
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Gestión de Novelas**: Creación, edición y eliminación de novelas con portadas personalizadas
+- **Sistema de Capítulos**: Organización de contenido por capítulos con editor de texto enriquecido
+- **Categorización por Géneros**: Clasificación de novelas mediante géneros literarios
+- **Interacción de Usuarios**: Sistema de likes y guardado de capítulos favoritos
+- **Perfiles de Usuario**: Gestión de perfiles para escritores y lectores
+- **Panel Administrativo**: Control total del contenido del sitio para administradores
+- **Autenticación Robusta**: Sistema completo de registro y login mediante Laravel Breeze
+- **Diseño Responsivo**: Interfaz adaptable a diferentes dispositivos
 
-## Learning Laravel
+## Tecnologías Utilizadas
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Backend**: PHP 8.1, Laravel 10
+- **Frontend**: HTML5, CSS3, JavaScript, TailwindCSS, Alpine.js
+- **Base de Datos**: MySQL
+- **Autenticación**: Laravel Breeze
+- **Almacenamiento**: Sistema de archivos local para imágenes
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Requisitos del Sistema
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP >= 8.1
+- Composer
+- MySQL
+- Node.js y NPM
+- Extensiones PHP: BCMath, Ctype, Fileinfo, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML
 
-## Laravel Sponsors
+## Instalación
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. Clonar el repositorio:
+```bash
+git clone https://github.com/Romerze/novelasapp.git
+cd novelasapp
+```
 
-### Premium Partners
+2. Instalar dependencias de PHP:
+```bash
+composer install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+3. Instalar dependencias de Node.js:
+```bash
+npm install
+```
 
-## Contributing
+4. Configurar el archivo .env:
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Configurar la conexión a la base de datos MySQL en .env:
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=novelasapp
+DB_USERNAME=tu_usuario
+DB_PASSWORD=tu_contraseña
+```
 
-## Code of Conduct
+6. Ejecutar migraciones:
+```bash
+php artisan migrate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7. Compilar assets:
+```bash
+npm run build
+```
 
-## Security Vulnerabilities
+8. Iniciar el servidor:
+```bash
+php artisan serve
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+9. Acceder a la aplicación en http://localhost:8000
 
-## License
+## Estructura del Proyecto
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+La aplicación sigue una arquitectura MVC (Modelo-Vista-Controlador):
+
+- **Modelos**: Representan las entidades del sistema (Novela, Capitulo, Genero, User)
+- **Vistas**: Plantillas Blade organizadas por secciones
+- **Controladores**: Gestionan la lógica de negocio por entidad
+
+### Rutas Principales
+
+El sistema utiliza rutas anidadas para representar la relación jerárquica entre recursos:
+
+- `/novelas`: Gestión de novelas
+- `/novelas/{novela}/capitulos`: Gestión de capítulos asociados a una novela
+- `/generos`: Gestión de géneros literarios
+- `/dashboard`: Panel de control para usuarios registrados
+
+## Documentación
+
+El sistema incluye documentación técnica y funcional completa que puede generarse como PDF o Word:
+
+```bash
+php artisan documentacion:profesional
+```
+
+La documentación se guardará en `public/documentacion/NovelasApp-Documentacion-Profesional.pdf`
+
+## Créditos
+
+Desarrollado por Romerze
+
+## Licencia
+
+Este proyecto está licenciado bajo [MIT license](https://opensource.org/licenses/MIT).
